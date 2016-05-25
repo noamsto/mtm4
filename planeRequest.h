@@ -37,10 +37,6 @@ typedef struct requestQueues
     int             size;
 }requestQueue;
 
-/*  data base of arriving / departimg planes    */
-typedef planeRequest[DAY][N]    airport;
-
-
 
 planeRequest* create_request();
 /*create a new request*/
