@@ -1,32 +1,25 @@
 //
-//  main.c
 //  MTM4
 //
 //  Created by Noam Stolero on 20.5.2016.
 //  Copyright © 2016 Noam Stolero. All rights reserved.
 //
 
-#include <stdio.h>
-#include <stdlib.h>
-#define N 7
-
-typedef struct vertices{
-    int val;
-    struct vertices *next;
-}vertex;
 
 
 
-typedef struct graphLinked{
-    vertex array[N];
-    int size;
-}graph;
+
+#include "linkedListGraph.h"
 
 
-void addEdge (graph* g, int verFrom, int verTo, int times){
+void addEdge (graph* g, int verFrom, int verTo, int times)
+{
     
     vertex * newVer;
     vertex* temp;
+    
+    if(verTo >= N || verTo<0 || verFrom >=N || verFrom<0)
+        return;
     
     if (times==0)
         return;
@@ -46,7 +39,8 @@ void addEdge (graph* g, int verFrom, int verTo, int times){
 
 
 
-void initGraph (graph* g){
+void initGraph (graph* g)
+{
     int i;
     
     for (i=0;i<N; i++){
@@ -58,7 +52,8 @@ void initGraph (graph* g){
 
 
 
-int isMainGroup(graph* g, int size, int group[], int groupSize){
+int isMainGroup(graph* g, int size, int group[], int groupSize)
+{
     int i,j, flag;
     vertex *temp;
     
@@ -82,43 +77,20 @@ int isMainGroup(graph* g, int size, int group[], int groupSize){
     return 1;
 }
 
-
-
-
-int main(int argc, const char * argv[]) {
-    
-    graph g;
-    int mainG[3]={0,3,5};
+void print_linked_graph(graph* g, int size)
+{
     int i;
     
-    initGraph(&g);
     
-    addEdge(&g, 0, 1,2);
-    addEdge(&g, 0, 6,2);
-    addEdge(&g, 1, 2,2);
-    addEdge(&g, 1, 3,2);
-    addEdge(&g, 1, 5,2);
-    addEdge(&g, 2, 6,2);
-    addEdge(&g, 2, 3,2);
-    addEdge(&g, 3, 4,2);
-    addEdge(&g, 4, 5,2);
-    addEdge(&g, 4, 6,2);
-    addEdge(&g, 5, 6,2);
-    
-    
-    
-    for (i=0; i<N; i++ ){
+    for (i=0; i<size; i++ ){
         printf("vertex %d-> ", i);
-        vertex *temp=g.array[i].next;
+        vertex *temp=g->array[i].next;
         while (temp!=NULL){
             printf("%d%s ",temp->val, temp->next!=NULL ? "->":"");
             temp=temp->next;
         }
         putchar('\n');
     }
-    
-    if (isMainGroup(&g, N, mainG, 3))
-        printf("main group!\n");
-    
-    return 0;
+
 }
+
