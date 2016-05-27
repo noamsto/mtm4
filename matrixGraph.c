@@ -1,5 +1,5 @@
 /*
- MTM4 - Yali Tsufim -304952898, Noam Stolero -201581683.
+ MTM4 - Yahel Tsufim -304952898, Noam Stolero -201581683.
  job inquiry, Air Port, and Graphs
  File: matrixGraph.c
  */
