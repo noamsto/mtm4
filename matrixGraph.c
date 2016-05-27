@@ -1,15 +1,15 @@
-//
-//  matrixGraph.c
-//  MTM4
-//
-//  Created by Noam Stolero on 25.5.2016.
-//  Copyright © 2016 Noam Stolero. All rights reserved.
-//
+/*
+ MTM4 - Yali Tsufim -304952898, Noam Stolero -201581683.
+ job inquiry, Air Port, and Graphs
+ File: matrixGraph.c
+ */
 
 
 #include "matrixGraph.h"
+#include <stdio.h>
 
 
+/*initialise matrix graph*/
 void initMatGraph(int g[][N],int size)
 {
     int i,j;
@@ -33,7 +33,7 @@ int is_main_matrix(int g[][N],int size,int group[],int groupSize)
 {
     int i,j,in_group;
     for(i=0;i<size;i++){
-        in_group = 0;/*rcheck every vertex if in group*/
+        in_group = 0;/*check every vertex if in group*/
         for(j=0;j<groupSize;j++){
             if(group[j]==i){/*if vertex belong to group, no need to check*/
                 in_group = 1;
@@ -52,6 +52,8 @@ int is_main_matrix(int g[][N],int size,int group[],int groupSize)
     return 1;
 }
 
+
+/*will print the graph matrix.*/
 void print_matrix_graph(int g[][N], int size)
 {
     int i,j;
@@ -67,7 +69,8 @@ void print_matrix_graph(int g[][N], int size)
         }
         printf("\n");
     }
-    
+    printf("\n");
+
 }
 
 

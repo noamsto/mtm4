@@ -1,15 +1,14 @@
-//
-//  main.c
-//  MTM4
-//
-//  Created by Noam Stolero on 25.5.2016.
-//  Copyright © 2016 Noam Stolero. All rights reserved.
-//
+/*
+ MTM4 - Yali Tsufim -304952898, Noam Stolero -201581683.
+ job inquiry, Air Port, and Graphs
+ File: main.c
+ */
 
 #include "matrixGraph.h"
 #include "linkedListGraph.h"
+#include <stdio.h>
 
-
+/*fill graph Matrix with Edges*/
 void insertEdgesMat(int g[][N])
 {
     addMatEdge(g, N, 0, 1);
@@ -25,6 +24,7 @@ void insertEdgesMat(int g[][N])
     addMatEdge(g, N, 5, 6);
 }
 
+/*fill graph linked list with edges*/
 void insterEdgesLink(graph* g)
 {
     addEdge(g, 0, 1,2);
@@ -43,23 +43,26 @@ void insterEdgesLink(graph* g)
 
 int main()
 {
-    int gm[N][N];
-    int mainG[3]={0,3,5};
-    graph g;
+    int gm[N][N];   /*decalre matrix graph*/
+    int mainG[3]={0,3,5}; /*declare main group*/
+    graph g;    /*declare linked list graph*/
 
     
-    initMatGraph(gm,N);
+    initMatGraph(gm,N); /*init matrix graph and linked list graph*/
     initGraph(&g);
     
-    insterEdgesLink(&g);
+    insterEdgesLink(&g);    /*insert edges to both graphs*/
     insertEdgesMat(gm);
     
-    print_matrix_graph(gm, N);
+    print_matrix_graph(gm, N);  /*print the 2 graphs.*/
     print_linked_graph(&g, N);
     
+    
+    /*check if the group is main group and print result*/
+    printf("Checking for main group in graphs:\n");
     if(is_main_matrix(gm, N, mainG, 3))
-        printf("is main\n");
+        printf("Matrix check: main group!\n");
     if (isMainGroup(&g, N, mainG, 3))
-        printf("main group!\n");
+        printf("Linked List Check: main group!\n");
     return 0;
 }

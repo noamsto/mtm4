@@ -9,9 +9,15 @@
 #ifndef linkedListGraph_h
 #define linkedListGraph_h
 
-#include <stdio.h>
+/*
+ MTM4 - Yali Tsufim -304952898, Noam Stolero -201581683.
+ job inquiry, Air Port, and Graphs
+ File: linkedListGraph.h
+ */
+
+
 #include <stdlib.h>
-#define N 7
+#define N 7 /*size of graph*/
 
 
 

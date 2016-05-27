@@ -1,10 +1,8 @@
-//
-//  planeRequest.h
-//  MTM4
-//
-//  Created by Noam Stolero on 20.5.2016.
-//  Copyright © 2016 Noam Stolero. All rights reserved.
-//
+/*
+ MTM4 - Yali Tsufim -304952898, Noam Stolero -201581683.
+ job inquiry, Air Port, and Graphs
+ File: planeRequest.h
+ */
 
 #ifndef planeRequest_h
 #define planeRequest_h
